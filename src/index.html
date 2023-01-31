@@ -11,16 +11,20 @@
   @@include('components/page-blocks/_header.html')
 	<main class="main">
     <section class="feet-the-cat">
-      <div class="feet-the-cat__wrapper">
-        <h2 class="section__title feet-the-cat__title">
-          Ты сегодня покормил кота?</h2>
-        <div class="card-food">
-          <div class="card-food__bnt"></div>
+      <div class="feet-the-cat__overlay">      
+        <div class="feet-the-cat__wrapper">
+          <h2 class="section__title feet-the-cat__title">
+            Ты сегодня покормил кота?
+          </h2>
+              @@include('components/bem-blocks/_card-food.html', {
+                "class": "feet-the-cat__card"
+                })  
+             
+      
         </div>
-        <!-- /.card-food -->
-        
+        <!-- /.feet-the-cat__wrapper -->
       </div>
-      <!-- /.feet-the-cat__wrapper -->
+      <!-- /.feet-the-cat__overlay -->
     </section>
 
     
