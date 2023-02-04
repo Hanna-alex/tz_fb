@@ -1,9 +1,12 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
     "browser-sync": "^2.27.11",
     "chalk": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-changed": "^4.0.3",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
@@ -16,6 +19,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttftowoff2": "^1.0.1",
+    "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
     "imagemin-jpeg-recompress": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
