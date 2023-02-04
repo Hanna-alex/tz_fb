@@ -5,9 +5,9 @@ const tasks = requireDir('./tasks');
 exports.html = tasks.html;
 exports.bs_html = tasks.bs_html;
 
-// exports.ttf = tasks.ttf;
-// exports.ttf2 = tasks.ttf2;
-// exports.fonts = tasks.fonts;
+exports.ttf = tasks.ttf;
+exports.ttf2 = tasks.ttf2;
+exports.fonts = tasks.fonts;
 
 exports.style = tasks.style;
 exports.rastr = tasks.rastr;
@@ -16,9 +16,9 @@ exports.watch = tasks.watch;
 
 exports.default = gulp.parallel(
 
-  // exports.ttf,
-  // exports.ttf2,
-  // exports.fonts,
+  exports.ttf,
+  exports.ttf2,
+  exports.fonts,
 
   exports.html,
   exports.bs_html,

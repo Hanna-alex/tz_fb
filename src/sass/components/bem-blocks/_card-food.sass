@@ -1,0 +1,117 @@
+.card-food
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  width: 320px
+  min-height: 509px
+  color: $color-black
+  overflow: hidden
+  z-index: 1
+
+  &__back
+    display: flex
+    position: relative
+    width: 100%
+    min-height: 480px
+    border-radius: 12px
+    overflow: hidden
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      right: 0
+      width: calc( 100% - 15% )
+      height: 10%
+      border-style: solid
+      border-color: $color-blue
+      border-width: 4px 4px 0 0
+      border-radius: 0 12px 0 0
+      z-index: -1
+    &::before
+      content: ""
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 100%
+      height: calc( 100% - 9% )
+      border-style: solid
+      border-color: $color-blue
+      border-width: 0 4px 4px 4px
+      border-radius: 0 0 12px 12px
+      z-index: -1
+      @include section-bg($color-card-food-bg, "../img/cart-food-bg.png", no-repeat, center 165px,368px 360px)
+
+    &_parallelogram
+      position: absolute
+      top: 0
+      right: 0
+      width: calc(100% + 4px)
+      height: calc(20% - 5px)
+      border-style: solid
+      border-color: $color-blue
+      border-width: 4px 0 0 6px
+      transform: skew(-45deg)
+      z-index: -2
+      background: $color-card-food-bg
+
+  &__info
+    padding: 21px 16px 16px 51px
+    display: flex
+    flex-direction: column
+    flex-basis: 100%
+    // cursor: pointer
+
+  &__tagline
+    font-family: 'Trebuchet MS'
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    line-height: 19px
+    color: $color-text
+    margin-bottom: 5px
+  &__title
+    font-weight: 700
+    font-size: 48px
+    line-height: 56px
+    margin-left: -3px
+  &__subtitle
+    font-weight: 700
+    font-size: 24px
+    line-height: 26px
+    margin-bottom: 16px
+  &__offer
+    display: flex
+    flex-direction: column
+    font-size: 14px
+    line-height: 16px
+    color: $color-text
+  &__price
+    padding: 20px 0 8px 0
+    align-self: end
+    width: 80px
+    height: 80px
+    background: $color-blue
+    border-radius: 50%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    color: $color-white
+    margin-top: auto
+    margin-bottom: 0
+  &__num
+    font-size: 42px
+    line-height: 22px
+    margin-bottom: 5px
+  &__unit
+    font-size: 21px
+    line-height: 22px
+
+  &__description
+    color: $color-white
+  &__btn
+    @include no-btn
+    color: $color-blue
+    border-bottom: 1px dashed $color-blue

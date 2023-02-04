@@ -1,22 +1,47 @@
 .feet-the-cat
-  width: 100vw
-  height: 100vh
-  background: url('../img/pattern.jpg') no-repeat center center / cover
+  position: relative
+  // max-width: 100vw
+  // height: 100%
+  min-height: 680px
+  // overflow: auto
+  @include section-bg(#b4b4b4, "../img/pattern.jpg")
+  &::-webkit-scrollbar
+    width: 0px
+    background: transparent
   &__overlay
-    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%)
 
   &__wrapper
-    padding: 36px 0 67px 0
+    padding: 36px 0
     display: flex
     flex-direction: row
+    justify-content: space-between
     flex-wrap: wrap
-    height: 100%
 
   &__title
+    font-family: 'Exo2Thin'
     font-size: 36px
     line-height: 44px
+    font-weight: normal
     color: $color-white
     text-align: center
-    flex-basis: 100%
+    width: 100%
+    text-shadow: 0px 1px 1px #000000
     margin-bottom: 24px
+
+.footer
+  padding: 1rem
+  widt: 100%
+  height: 150px
+  background: #F1EDE1
+  &__wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    color: #4B7378

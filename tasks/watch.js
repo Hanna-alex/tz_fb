@@ -10,6 +10,6 @@ module.exports = function watching() {
   watch('src/**/*.sass', parallel('style'));
   watch('src/img/**/*.+(png|jpg|jpeg|gif)', parallel('rastr'));
 
-  // watch('src/fonts/**/*.ttf', series('ttf', 'ttf2', 'fonts'));
+  watch('src/fonts/**/*.ttf', series('ttf', 'ttf2', 'fonts'));
 
 }

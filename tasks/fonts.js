@@ -1,7 +1,7 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
-let srcFonts = 'src/sass/_local-fonts.scss';
+let srcFonts = 'src/sass/_local-fonts.sass';
 let appFonts = 'build/fonts/';
 module.exports = function fonts(done) {
   fs.writeFile(srcFonts, '', () => { });
@@ -15,7 +15,7 @@ module.exports = function fonts(done) {
         fontname = fontname[0];
         if (c_fontname != fontname) {
           if (fontExt == 'woff' || fontExt == 'woff2') {
-            fs.appendFile(srcFonts, `@include font-face("${fontname}", "${fontname}", 400);\r\n`, () => { });
+            fs.appendFile(srcFonts, `@include font-face("${fontname}", "${fontname}", 400)\r\n`, () => { });
             console.log(chalk`
 {bold {bgGray Added new font: ${fontname}.}
 ----------------------------------------------------------------------------------
