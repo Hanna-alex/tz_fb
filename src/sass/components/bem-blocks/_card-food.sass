@@ -9,7 +9,8 @@
   color: $color-black
   overflow: hidden
   z-index: 1
-
+  // &_disablet
+  //   color:
   &__back
     display: flex
     position: relative
@@ -117,10 +118,11 @@
       left: 19px
       width: 100%
       height: 50px
-      border-width: 4px 4px 4px 5px
+      border-width: 4px 0 0 5px
       transform: skew(-45deg)
-      z-index: -3
       background: $color-card-food-bg
+      z-index: -3
+
     &_corner
       top: 0
       right: 0
@@ -128,7 +130,8 @@
       height: 45px
       border-width: 4px 4px 0 0
       border-radius: 0 12px 0 0
-      z-index: -2
+      z-index: -3
+
     &_lower
       bottom: 0
       right: 0
@@ -136,5 +139,14 @@
       height: calc( 100% - 45px )
       border-width: 0 4px 4px 4px
       border-radius: 0 0 12px 12px
+      background: $color-card-food-bg
       z-index: -1
-      @include section-bg($color-card-food-bg, "../img/cart-food-bg.png", no-repeat, center 165px,368px 360px)
+      overflow: hidden
+
+  &__img
+    position: absolute
+    left: -24px
+    bottom: -43px
+    width: 322px
+    height: 315px
+    z-index: 1
