@@ -1,63 +1,54 @@
-const defaultCardText = 'Чего сидишь? Порадуй котэ,';
-const defaultCardTextBtn = 'купи.';
-
-const selectedCardText = {
-  'с фуа-гра': 'Печень утки разварная с артишоками.',
-  'с рыбой': 'Головы щучьи с чесноком да свежайшая сёмгушка.',
-  'с курой': 'Филе из цыплят с трюфелями в бульоне.',
-
-};
+function selected() {
+  const foodCards = document.querySelectorAll('.card-food');
+  // const defaultCardText = 'Чего сидишь? Порадуй котэ,';
+  // const defaultCardTextBtn = 'купи.';
 
 
-const foodCards = document.querySelectorAll('.card-food');
-const containDescription = document.querySelectorAll('.card-food__description');
+
+  const containDescriptions = document.querySelectorAll('.card-food__description');
 
 
-containDescription.forEach(elem => {
-  elem.insertAdjacentHTML('beforeend', `<p class="description__text">
-   ${defaultCardText} </p> <button class="card-food__btn">${defaultCardTextBtn}</button>`)
-})
+  containDescriptions.forEach(elem => {
+    elem.addEventListener('click', (event) => {
 
+      const target = event.target.className
 
-containDescription.forEach(elem => {
-  elem.addEventListener('click', (event) => {
+      if (target === 'card-food__btn') selected(elem)
 
-    const target = event.target.className
-
-    if (target === 'card-food__btn') selected(elem)
-
-  })
-})
-
-
-foodCards.forEach(elem => {
-  elem.addEventListener('click', (event) => {
-
-    const target = event.target.className
-
-    if (target === 'card-food__info') selected(elem)
-
+    })
   })
 
-});
+
+  foodCards.forEach(elem => {
+    elem.addEventListener('click', (event) => {
+
+      const target = event.target.className
+
+      if (target === 'card-food__info' && !elem.classList.contains('card-food_disabled')) selected(elem)
+
+    })
+
+  });
 
 
 
-function selected(card) {
-  const cardFood = card.closest('.card-food');
-  const borderElems = cardFood.querySelectorAll('.back__elem');
-  const price = cardFood.querySelector('.card-food__price');
+  function selected(card) {
+    const cardFood = card.closest('.card-food');
+    const borderElems = cardFood.querySelectorAll('.back__elem');
+    const price = cardFood.querySelector('.card-food__price');
 
-  cardFood.classList.toggle('card-food_selected')
-  borderElems.forEach(borderElem => {
-    borderElem.classList.toggle('back__elem_selected');
-  })
+    cardFood.classList.toggle('card-food_selected')
+    borderElems.forEach(borderElem => {
+      borderElem.classList.toggle('back__elem_selected');
+    })
 
-  price.classList.toggle('card-food__price_selected');
+    price.classList.toggle('card-food__price_selected');
 
-  addTextSelected(card)
+    addTextSelected(card)
 
+  }
 }
+
 
 
 function addTextSelected(elem) {

@@ -2,50 +2,57 @@ function hoverCards() {
 
   const foodCards = document.querySelectorAll('.card-food');
   const containDescription = document.querySelectorAll('.card-food__description');
-  const cardBtn = document.querySelectorAll('.card-food__btn');
+
 
 
   containDescription.forEach(elem => {
     elem.addEventListener('mouseover', (event) => {
-      const targetClass = event.target.className
 
-      if (targetClass === 'card-food__btn') mouseOver(elem)
+      const card = elem.closest('.card-food');
+      const targetClass = event.target.className;
+
+      if (targetClass === 'card-food__btn' && !card.classList.contains('card-food_disabled')) mouseOver(elem)
     })
   })
 
   containDescription.forEach(elem => {
     elem.addEventListener('mouseout', (event) => {
-      const targetClass = event.target.className
+      const card = elem.closest('.card-food');
+      const targetClass = event.target.className;
 
-      if (targetClass === 'card-food__btn') mouseLeave(elem)
+      if (targetClass === 'card-food__btn' && !card.classList.contains('card-food_disabled')) mouseLeave(elem)
     })
   })
 
+
   foodCards.forEach(elem => {
+    if (!elem.classList.contains('card-food_disabled')) {
 
-    const back = elem.querySelector('.back');
+      const back = elem.querySelector('.back');
 
-    back.addEventListener('mouseenter', () => {
-      mouseOver(back)
-    });
+      back.addEventListener('mouseenter', () => {
+        mouseOver(back)
+      });
+    }
+
 
   });
 
 
   foodCards.forEach(elem => {
+    if (!elem.classList.contains('card-food_disabled')) {
+      const back = elem.querySelector('.back');
 
-    const back = elem.querySelector('.back');
+      back.addEventListener('mouseleave', () => {
 
-    back.addEventListener('mouseleave', () => {
-
-      mouseLeave(back)
-    });
+        mouseLeave(back)
+      });
+    }
   });
 
 
 
-  const defaultHoverTagline = 'Сказочное заморское яство';
-  const selectedHoverTagline = 'Котэ не одобряет?';
+
 
 
   function mouseOver(elem) {

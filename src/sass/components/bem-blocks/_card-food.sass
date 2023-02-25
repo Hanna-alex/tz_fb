@@ -9,8 +9,14 @@
   color: $color-black
   overflow: hidden
   z-index: 1
-  // &_disablet
-  //   color:
+  margin-bottom: 24px
+  &_disabled
+    .card-food__back
+      cursor: default
+    .card-food__tagline,.card-food__title,.card-food__subtitle,.card-food__offer
+      color: $color-disabled
+      opacity: 0.5
+
   &__back
     display: flex
     position: relative
@@ -75,6 +81,8 @@
     &_selected-hover
       background: $color-selected-hover
       transition: all 0.3s
+    &_disabled
+      background: $color-disabled
 
   &__num
     font-size: 42px
@@ -93,26 +101,24 @@
   display: flex
   justify-content: space-between
   min-width: 210px
-  &__text
-    color: $color-white
+  color: $color-white
+  &_disabled
+    color: $color-disabled-text
 
 ////////////////////////////////////////
 .back
   &__elem
     position: absolute
     border-style: solid
-    border-color: $color-blue
-    transition: all 0.3s
+    @include card-border ($color-blue)
     &_hover
-      border-color: $color-hover
-      transition: all 0.3s
+      @include card-border ($color-hover)
     &_selected
-      border-color: $color-selected
-      transition: all 0.3s
+      @include card-border ($color-selected)
     &_selected-hover
-      border-color: $color-selected-hover
-      transition: all 0.3s
-
+      @include card-border ($color-selected-hover)
+    &_disabled
+      @include card-border ($color-disabled)
     &_parallelogram
       top: 0
       left: 19px
@@ -131,7 +137,6 @@
       border-width: 4px 4px 0 0
       border-radius: 0 12px 0 0
       z-index: -3
-
     &_lower
       bottom: 0
       right: 0
@@ -150,3 +155,6 @@
     width: 322px
     height: 315px
     z-index: 1
+    opacity: 1
+    &_disabled
+      opacity: 0.5

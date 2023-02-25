@@ -1,66 +1,38 @@
 <!DOCTYPE html>
-@@include('components/page-blocks/_head.html',{
-"lang":"ru",
-"title":"Тестовое задание",
-"description":"Тестовое задание на вакантную должность:HTML/CSS/JS-разработчик",
-"keywords":"HTML , CSS, JS, HTML/CSS/JS-разработчик, FunBox,  ", 
-"favicon":"img/favicons/favicon",
-})
+<html lang="ru">
+  @@include('components/page-blocks/_head.html',{"title": "TZ",
+  "favicon":"img/favicons/favicon", "description":"Тестовое задание",
+  "keywords":"", })
 
-<body>
-  @@include('components/page-blocks/_header.html')
-  
-	<main class="main">
-    <section class="feet-the-cat">
-      <div class="feet-the-cat__overlay">  
-      </div>
-      <!-- /.feet-the-cat__overlay -->    
+  <body>
+    @@include('components/page-blocks/_header.html')
+
+    <main class="main">
+      <section class="feet-the-cat">
+        <div class="feet-the-cat__overlay"></div>
+        <!-- /.feet-the-cat__overlay -->
         <div class="container">
           <div class="feet-the-cat__wrapper">
-            
-            <h2 class="section__title feet-the-cat__title">
-              Ты сегодня покормил кота?
-            </h2>
+            <h2 class="feet-the-cat__title">Ты сегодня покормил кота?</h2>
 
-            @@include('components/bem-blocks/_card-food.html', {
-                "class": "feet-the-cat__card",
-                "subtitle": "с фуа-гра",
-                "weight": "0,5"
-                })  
-
-            @@include('components/bem-blocks/_card-food.html', {
-                "class": "feet-the-cat__card",
-                "subtitle": "с рыбой",
-                "weight": "2"
-                })  
-
-            @@include('components/bem-blocks/_card-food.html', {
-                "class": "feet-the-cat__card",
-                "subtitle": "с курой",
-                "weight": "5"
-                })               
-                
+            <!-- @@include('components/bem-blocks/_card-food.html', {"class":
+            "feet-the-cat__card", "subtitle": "с фуа-гра", "weight": "0,5" }) -->
           </div>
           <!-- /.feet-the-cat__wrapper -->
         </div>
         <!-- /.container -->
-      
-    </section>
+      </section>
 
-    <div class="variables-border-card">
-      <div class="border-card">
-        <div class="border-card__wrapper"></div>
-        <!-- /.border-card__wrapper -->
+      <div class="variables-border-card">
+        <div class="border-card">
+          <div class="border-card__wrapper"></div>
+          <!-- /.border-card__wrapper -->
+        </div>
+        <!-- /.border-card -->
       </div>
-      <!-- /.border-card -->
-
-    </div>
-    <!-- /.variables-border-card -->
-
-    
-  </main>
-  @@include('components/page-blocks/_footer.html')
-	@@include('components/page-blocks/_scripts.html')
-</body>
-
+      <!-- /.variables-border-card -->
+    </main>
+    @@include('components/page-blocks/_footer.html')
+    @@include('components/page-blocks/_scripts.html')
+  </body>
 </html>
