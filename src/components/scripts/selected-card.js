@@ -82,9 +82,6 @@ function addTextSelected(elem) {
     tagline.innerText = defaultHoverTagline;
     tagline.style.color = ' #666666';
 
-
-    console.log(cardFood);
-
     textContainer.innerHTML = '';
     textContainer.insertAdjacentHTML('beforeend', `<p class="description__text">
                                       ${defaultCardText} </p> 
