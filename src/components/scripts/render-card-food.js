@@ -56,7 +56,8 @@ function render(goodsArr) {
             <div class="card-food__description description">
             <p class="description__text">
                 ${defaultCardText} </p> 
-            <button class="card-food__btn">${defaultCardTextBtn}</button>
+            <button class="card-food__btn"> <span class="card-food__btn_text"> ${defaultCardTextBtn}</span>.
+           </button>
             </div>
             <!-- /.card-food__description -->
           </div>

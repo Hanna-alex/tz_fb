@@ -35,7 +35,7 @@ const selectedCardText = {
 };
 
 const defaultCardText = 'Чего сидишь? Порадуй котэ,';
-const defaultCardTextBtn = 'купи.';
+const defaultCardTextBtn = 'купи';
 
 const defaultHoverTagline = 'Сказочное заморское яство';
 const selectedHoverTagline = 'Котэ не одобряет?';

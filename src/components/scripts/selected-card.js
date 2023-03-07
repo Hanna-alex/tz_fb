@@ -1,10 +1,5 @@
 function selected() {
   const foodCards = document.querySelectorAll('.card-food');
-  // const defaultCardText = 'Чего сидишь? Порадуй котэ,';
-  // const defaultCardTextBtn = 'купи.';
-
-
-
   const containDescriptions = document.querySelectorAll('.card-food__description');
 
 
@@ -13,7 +8,7 @@ function selected() {
 
       const target = event.target.className
 
-      if (target === 'card-food__btn') selected(elem)
+      if (target === 'card-food__btn' || target === 'card-food__btn_text') selected(elem)
 
     })
   })
@@ -36,6 +31,7 @@ function selected() {
     const cardFood = card.closest('.card-food');
     const borderElems = cardFood.querySelectorAll('.back__elem');
     const price = cardFood.querySelector('.card-food__price');
+
 
     cardFood.classList.toggle('card-food_selected')
     borderElems.forEach(borderElem => {
@@ -73,9 +69,31 @@ function addTextSelected(elem) {
 
   } else {
 
+    const backElems = cardFood.querySelectorAll('.back__elem');
+    backElems.forEach(backElem => {
+      backElem.classList.remove('back__elem_selected-hover');
+    })
+
+    const price = cardFood.querySelector('.card-food__price');
+    price.classList.remove('card-food__price_selected-hover');
+    let tagline = cardFood.querySelector('.card-food__tagline')
+
+    tagline.innerText = '';
+    tagline.innerText = defaultHoverTagline;
+    tagline.style.color = ' #666666';
+
+
+    console.log(cardFood);
+
     textContainer.innerHTML = '';
     textContainer.insertAdjacentHTML('beforeend', `<p class="description__text">
-   ${defaultCardText} </p> <button class="card-food__btn">${defaultCardTextBtn}</button>`);
+                                      ${defaultCardText} </p> 
+                                    <button class="card-food__btn"> <span class="card-food__btn_text"> ${defaultCardTextBtn}</span>.
+                                    </button>`);
+
+
+
+
   }
 
 }

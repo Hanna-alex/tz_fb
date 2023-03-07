@@ -11,7 +11,7 @@ function hoverCards() {
       const card = elem.closest('.card-food');
       const targetClass = event.target.className;
 
-      if (targetClass === 'card-food__btn' && !card.classList.contains('card-food_disabled')) mouseOver(elem)
+      if (targetClass === 'card-food__btn' || targetClass === 'card-food__btn_text' && !card.classList.contains('card-food_disabled')) mouseOver(elem)
     })
   })
 
@@ -20,7 +20,7 @@ function hoverCards() {
       const card = elem.closest('.card-food');
       const targetClass = event.target.className;
 
-      if (targetClass === 'card-food__btn' && !card.classList.contains('card-food_disabled')) mouseLeave(elem)
+      if (targetClass === 'card-food__btn' || targetClass === 'card-food__btn_text' && !card.classList.contains('card-food_disabled')) mouseLeave(elem)
     })
   })
 
@@ -63,11 +63,12 @@ function hoverCards() {
 
 
     if (elems.classList.contains('card-food_selected')) {
+
       let tagline = elems.querySelector('.card-food__tagline')
 
       tagline.innerText = '';
-      tagline.innerText = defaultHoverTagline;
-      tagline.style.color = '#666666';
+      tagline.innerText = selectedHoverTagline;
+      tagline.style.color = '#E62E7A';
 
       price.classList.add('card-food__price_selected-hover')
 
@@ -82,6 +83,7 @@ function hoverCards() {
 
       backElems.forEach(backElem => {
         backElem.classList.add('back__elem_hover')
+
       })
 
     }
@@ -102,8 +104,8 @@ function hoverCards() {
       let tagline = elems.querySelector('.card-food__tagline')
 
       tagline.innerText = '';
-      tagline.innerText = selectedHoverTagline;
-      tagline.style.color = '#E62E7A';
+      tagline.innerText = defaultHoverTagline;
+      tagline.style.color = ' #666666';
 
       price.classList.remove('card-food__price_selected-hover')
 

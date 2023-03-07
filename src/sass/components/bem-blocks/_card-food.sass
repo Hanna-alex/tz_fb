@@ -95,7 +95,10 @@
   &__btn
     @include no-btn
     color: $color-blue
-    border-bottom: 1px dashed $color-blue
+    &_text
+      border-bottom: 1px dashed $color-blue
+    &:hover
+      color: $color-hover
 
 .description
   display: flex
