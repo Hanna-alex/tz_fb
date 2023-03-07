@@ -15,7 +15,7 @@ exports.fonts = tasks.fonts;
 
 exports.style = tasks.style;
 exports.rastr = tasks.rastr;
-// exports.webp = tasks.webp;
+exports.webp = tasks.webp;
 exports.watch = tasks.watch;
 
 exports.default = gulp.parallel(
@@ -31,6 +31,6 @@ exports.default = gulp.parallel(
   exports.style,
   exports.dev_js,
   exports.rastr,
-  // exports.webp,
+  exports.webp,
   exports.watch
 )

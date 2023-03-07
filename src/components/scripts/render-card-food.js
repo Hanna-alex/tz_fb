@@ -30,7 +30,7 @@ function render(goodsArr) {
 
                       <div class="back__elem back__elem_lower">
                           <div class="back__img">
-                            <img src="img/cart-food-bg.png" alt="Cat" />
+                            <img src="img/cart-food-bg.webp" alt="Cat" />
                           </div>
                         <!-- /.back__img -->
                       </div>
