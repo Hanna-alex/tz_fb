@@ -26,12 +26,14 @@ function hoverCards() {
 
 
   foodCards.forEach(elem => {
+
     if (!elem.classList.contains('card-food_disabled')) {
 
       const back = elem.querySelector('.back');
 
       back.addEventListener('mouseenter', () => {
-        mouseOver(back)
+        mouseOver(back);
+        console.log(elem);
       });
     }
 

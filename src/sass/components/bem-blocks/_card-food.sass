@@ -9,7 +9,19 @@
   color: $color-black
   overflow: hidden
   z-index: 1
-  margin-bottom: 24px
+  margin-bottom: 31px
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: -24px
+    display: block
+    width: 45px
+    height: 45px
+    background: transparent
+    transform: skew(-45deg)
+    cursor: default
+
   &_disabled
     .card-food__back
       cursor: default
@@ -33,7 +45,7 @@
     flex-basis: 100%
 
   &__tagline
-    font-family: 'Trebuchet MS Regular', sans-serif
+    font-family: 'Trebuchet MS', sans-serif
     font-style: normal
     font-weight: 400
     font-size: 16px
@@ -99,6 +111,7 @@
     color: $color-blue
     &_text
       border-bottom: 1px dashed $color-blue
+      font-weight: 700
     &:hover
       color: $color-hover
 
@@ -126,10 +139,10 @@
       @include card-border ($color-disabled)
     &_parallelogram
       top: 0
-      left: 19px
+      left: 18px
       width: 100%
       height: 50px
-      border-width: 4px 0 0 5px
+      border-width: 4px 0 0 6px
       transform: skew(-45deg)
       background: $color-card-food-bg
       z-index: -3
@@ -155,11 +168,13 @@
 
   &__img
     position: absolute
-    left: -24px
-    bottom: -43px
+    left: -28px
+    bottom: -92px
     width: 322px
     height: 315px
     z-index: 1
     opacity: 1
+    width: 368px
+    height: 360px
     &_disabled
       opacity: 0.5
